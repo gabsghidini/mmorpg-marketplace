@@ -14,4 +14,6 @@ export interface PlayerContext {
 	setPlayer: React.Dispatch<React.SetStateAction<Player>>;
 	playerList: Player[];
 	getAllPlayers: () => Promise<void>;
+	getPlayerById: (id: string) => Promise<void>;
+	impersonatePlayer: (id: string) => Promise<void>;
 }
