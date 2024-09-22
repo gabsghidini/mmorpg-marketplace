@@ -1,14 +1,22 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { PlayerContext } from "../../context/Players.context";
 import * as S from "./styles";
 import { useNavigate } from "react-router-dom";
+import OfferModal from "../../components/offer";
+import { Item } from "../../interfaces/item";
 
-const Dashboard: React.FC = () => {
+const Dashboard = () => {
 	const { player } = useContext(PlayerContext);
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [item, setItem] = useState({} as Item);
 	const navigate = useNavigate();
 
 	const handleSwitchPlayer = () => {
 		navigate("/");
+	};
+
+	const handleModalClose = () => {
+		setIsModalOpen(false);
 	};
 
 	return (
@@ -86,10 +94,21 @@ const Dashboard: React.FC = () => {
 						<S.Button onClick={handleSwitchPlayer}>
 							Switch Player
 						</S.Button>
-						<S.Button>Create Offer</S.Button>
+						<S.Button
+							onClick={() => {
+								setIsModalOpen(true);
+							}}
+						>
+							Create Offer
+						</S.Button>
 					</S.Footer>
 				</S.VBox>
 			</S.DashboardContainer>
+			<OfferModal
+				isOpen={isModalOpen}
+				item={item}
+				onClose={handleModalClose}
+			/>
 		</S.Container>
 	);
 };
