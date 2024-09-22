@@ -8,9 +8,11 @@ import {
 	playerRouter,
 } from "./routes";
 import errorHandler from "./errors";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.use("/inventory", inventoryRouter);
 app.use("/item", itemRouter);
 app.use("/offer", offerRoutes);
