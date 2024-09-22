@@ -9,8 +9,9 @@ function Login() {
 		useContext(PlayerContext);
 
 	const handleImpersonate = () => {
-		if (!player.id) {
+		if (!player.nickname) {
 			setPlayer(playerList[0] as Player);
+			return impersonatePlayer(playerList[0].id as string);
 		}
 
 		impersonatePlayer(player.id as string);

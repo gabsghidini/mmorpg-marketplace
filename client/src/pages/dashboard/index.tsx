@@ -4,14 +4,16 @@ import * as S from "./styles";
 import { useNavigate } from "react-router-dom";
 import OfferModal from "../../components/offer";
 import { Item } from "../../interfaces/item";
+import { Player } from "../../interfaces/player";
 
 const Dashboard = () => {
-	const { player } = useContext(PlayerContext);
+	const { player, setPlayer } = useContext(PlayerContext);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [item, setItem] = useState({} as Item);
 	const navigate = useNavigate();
 
 	const handleSwitchPlayer = () => {
+		setPlayer({} as Player);
 		navigate("/");
 	};
 
