@@ -12,6 +12,13 @@ import getItemById from "./item/getItemById.controller";
 import updateItemById from "./item/updateItemById.controller";
 import deleteItemById from "./item/deleteItemById.controller";
 
+/* OFFER */
+import createNewOffer from "./offer/createNewOffer.controller";
+import getAllOffers from "./offer/getAllOffers.controller";
+import getOfferById from "./offer/getOfferById.controller";
+import updateOfferById from "./offer/updateOfferById.controller";
+import deleteOfferById from "./offer/deleteOfferById.controller";
+
 export {
 	createNewPlayer,
 	getAllPlayers,
@@ -23,4 +30,9 @@ export {
 	getItemById,
 	updateItemById,
 	deleteItemById,
+	createNewOffer,
+	getAllOffers,
+	getOfferById,
+	updateOfferById,
+	deleteOfferById,
 };

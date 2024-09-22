@@ -12,6 +12,13 @@ import getItemByIdService from "./item/getItemById.service";
 import updateItemByIdService from "./item/updateItemById.service";
 import deleteItemByIdService from "./item/deleteItemById.service";
 
+/* OFFER */
+import createNewOfferService from "./offer/createNewOffer.service";
+import getAllOffersService from "./offer/getAllOffers.service";
+import getOfferByIdService from "./offer/getOfferById.service";
+import updateOfferByIdService from "./offer/updateOfferById.service";
+import deleteOfferByIdService from "./offer/deleteOfferById.service";
+
 export {
 	createNewPlayerService,
 	getAllPlayersService,
@@ -23,4 +30,9 @@ export {
 	getItemByIdService,
 	updateItemByIdService,
 	deleteItemByIdService,
+	createNewOfferService,
+	getAllOffersService,
+	getOfferByIdService,
+	updateOfferByIdService,
+	deleteOfferByIdService,
 };
