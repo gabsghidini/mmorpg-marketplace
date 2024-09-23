@@ -8,24 +8,25 @@ const addItemToPlayerService = async (
 	playerId: string,
 	itemId: string,
 	quantity: number
-): Promise<Inventory> => {
+): Promise<Player> => {
 	const playerRepository = AppDataSource.getRepository(Player);
 	const itemRepository = AppDataSource.getRepository(Item);
 	const inventoryRepository = AppDataSource.getRepository(Inventory);
 
-	// Verifica se o jogador existe
-	const player = await playerRepository.findOneBy({ id: playerId });
+	const player = await playerRepository.findOne({
+		where: { id: playerId },
+		relations: ["inventory"],
+	});
+
 	if (!player) {
 		throw new AppError({ message: "Player not found", code: 404 });
 	}
 
-	// Verifica se o item existe
 	const item = await itemRepository.findOneBy({ id: itemId });
 	if (!item) {
 		throw new Error("Item not found");
 	}
 
-	// Verifica se o jogador já possui o item no inventário
 	let inventory = await inventoryRepository.findOne({
 		where: {
 			player: player,
@@ -34,10 +35,8 @@ const addItemToPlayerService = async (
 	});
 
 	if (inventory) {
-		// Se o item já está no inventário, apenas atualiza a quantidade
 		inventory.quantity += quantity;
 	} else {
-		// Se o item não está no inventário, cria um novo registro
 		inventory = inventoryRepository.create({
 			player: player,
 			item: item,
@@ -45,10 +44,9 @@ const addItemToPlayerService = async (
 		});
 	}
 
-	// Salva o inventário atualizado
 	await inventoryRepository.save(inventory);
 
-	return inventory;
+	return player;
 };
 
 export default addItemToPlayerService;
