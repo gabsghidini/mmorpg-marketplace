@@ -1,9 +1,14 @@
 import { Router } from "express";
+import { addItemToPlayer } from "../controllers";
 
 const inventoryRouter = Router();
 
-inventoryRouter.get("/", (req, res) => {
-	res.send("Hello, inventory!");
-});
+/* CREATE */
+inventoryRouter.post("/:id", addItemToPlayer);
+/* READ */
+
+/* UPDATE */
+
+/* DELETE */
 
 export default inventoryRouter;

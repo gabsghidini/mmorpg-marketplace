@@ -19,6 +19,9 @@ import getOfferByIdService from "./offer/getOfferById.service";
 import updateOfferByIdService from "./offer/updateOfferById.service";
 import deleteOfferByIdService from "./offer/deleteOfferById.service";
 
+/* INVENTORY */
+import addItemToPlayerService from "./inventory/addItemToPlayer.service";
+
 export {
 	createNewPlayerService,
 	getAllPlayersService,
@@ -35,4 +38,5 @@ export {
 	getOfferByIdService,
 	updateOfferByIdService,
 	deleteOfferByIdService,
+	addItemToPlayerService,
 };
