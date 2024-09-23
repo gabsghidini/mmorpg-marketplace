@@ -13,7 +13,7 @@ import updateItemByIdService from "./item/updateItemById.service";
 import deleteItemByIdService from "./item/deleteItemById.service";
 
 /* OFFER */
-import createNewOfferService from "./offer/createNewOffer.service";
+import createBuyOfferService from "./offer/createBuyOffer.service";
 import getAllOffersService from "./offer/getAllOffers.service";
 import getOfferByIdService from "./offer/getOfferById.service";
 import updateOfferByIdService from "./offer/updateOfferById.service";
@@ -33,7 +33,7 @@ export {
 	getItemByIdService,
 	updateItemByIdService,
 	deleteItemByIdService,
-	createNewOfferService,
+	createBuyOfferService,
 	getAllOffersService,
 	getOfferByIdService,
 	updateOfferByIdService,
