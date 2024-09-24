@@ -21,7 +21,7 @@ export class Offer {
 	@JoinColumn({ name: "item_id" })
 	item: Item;
 
-	@Column({ type: "enum", enum: ["buy", "sell"] })
+	@Column({ type: "varchar" })
 	type: "buy" | "sell";
 
 	@Column({ type: "int" })
