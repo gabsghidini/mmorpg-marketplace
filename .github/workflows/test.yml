@@ -22,5 +22,8 @@ jobs:
             - name: Install dependences
               run: npm install
 
+            - name: Change directory to server
+              run: cd server
+
             - name: Run tests
               run: npm run test
