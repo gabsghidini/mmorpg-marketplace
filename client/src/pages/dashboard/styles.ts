@@ -19,11 +19,15 @@ export const VBox = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
+	width: 100%;
+	height: 100%;
 `;
 
 export const HBox = styled.div`
 	display: flex;
 	align-items: flex-start;
+	width: 100%;
+	height: 100%;
 `;
 
 export const DashboardContainer = styled.div`
@@ -33,11 +37,14 @@ export const DashboardContainer = styled.div`
 	border: 1px solid #d6d6d6;
 	border-radius: 10px;
 	background-color: #f9f9f9;
+	width: 80%;
+	height: 80%;
 `;
 
 export const ItemsList = styled.div`
 	flex: 1;
 	margin-right: 20px;
+	height: 80%;
 `;
 
 export const OffersContainer = styled.div`
@@ -84,5 +91,29 @@ export const Button = styled.button`
 
 	&:hover {
 		background-color: #4cae4c;
+	}
+`;
+
+export const UnorderedList = styled.ul`
+	list-style-type: none;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #4cae4c;
+	margin: 1rem 0;
+`;
+
+export const ItemButton = styled.button<{ selected: boolean }>`
+	background-color: ${({ selected }) => (selected ? "#d3d3d3" : "white")};
+	border: 1px solid #ccc;
+	padding: 10px;
+	width: 100%;
+	text-align: left;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+
+	&:hover {
+		background-color: ${({ selected }) =>
+			selected ? "#b0b0b0" : "#f0f0f0"};
 	}
 `;

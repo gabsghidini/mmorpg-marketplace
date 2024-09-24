@@ -15,7 +15,7 @@ const addItemToPlayerService = async (
 
 	const player = await playerRepository.findOne({
 		where: { id: playerId },
-		relations: ["inventory"],
+		relations: ["inventory", "inventory.item"],
 	});
 
 	if (!player) {
@@ -24,7 +24,7 @@ const addItemToPlayerService = async (
 
 	const item = await itemRepository.findOneBy({ id: itemId });
 	if (!item) {
-		throw new Error("Item not found");
+		throw new AppError("Item not found", 404);
 	}
 
 	let inventory = await inventoryRepository.findOne({
@@ -32,6 +32,7 @@ const addItemToPlayerService = async (
 			player: player,
 			item: item,
 		},
+		relations: ["item"],
 	});
 
 	if (inventory) {
@@ -46,7 +47,12 @@ const addItemToPlayerService = async (
 
 	await inventoryRepository.save(inventory);
 
-	return player;
+	const updatedPlayer = await playerRepository.findOne({
+		where: { id: playerId },
+		relations: ["inventory", "inventory.item"],
+	});
+
+	return updatedPlayer!;
 };
 
 export default addItemToPlayerService;

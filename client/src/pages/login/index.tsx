@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { PlayerContext } from "../../context/Players.context";
+import { GeneralContext } from "../../context/General.context";
 import { Player } from "../../interfaces/player";
 import * as S from "./styles";
 import toast from "react-hot-toast";
 
 function Login() {
 	const { player, setPlayer, playerList, impersonatePlayer } =
-		useContext(PlayerContext);
+		useContext(GeneralContext);
 
 	const handleImpersonate = () => {
 		if (!player.nickname) {

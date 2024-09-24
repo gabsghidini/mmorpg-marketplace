@@ -7,7 +7,7 @@ const getPlayerByIdService = async (playerId: string): Promise<i.Player> => {
 
 	const player = await playerRepository.findOne({
 		where: { id: playerId },
-		relations: ["inventory", "offers"],
+		relations: ["inventory", "inventory.item", "offers"],
 	});
 
 	return player;

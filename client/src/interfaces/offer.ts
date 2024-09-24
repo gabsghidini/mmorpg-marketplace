@@ -10,4 +10,5 @@ export interface Offer {
 	pricePerUnit: number;
 	totalPrice: number;
 	endDate: Date;
+	playerNickname?: string;
 }
