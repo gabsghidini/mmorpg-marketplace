@@ -8,6 +8,9 @@
     -   [Instalando Dependências](#31-instalando-dependências)
     -   [Variáveis de Ambiente](#32-variáveis-de-ambiente)
     -   [Migrations](#33-migrations)
+    -   [Rodando o Back-End](#34-rodando-o-back-end)
+    -   [Rodando o Front-End](#35-rodando-o-front-end)
+    -   [Rodando os Testes](#36-rodando-os-testes)
 -   [Endpoints](#4-endpoints)
 
 ---
@@ -68,6 +71,36 @@ npm run typeorm migration:run -d src/data-source.ts
 ```
 
 ---
+
+### 3.4. Rodando o Back-End
+
+Entre na pasta do servidor e execute o comando:
+
+```shell
+npm run dev
+```
+
+Após isto, se tudo ocorrer bem, a aplicação estará rodando em http://localhost:5000/
+
+### 3.5. Rodando o Front-End
+
+Entre na pasta do cliente e execute o comando:
+
+```shell
+npm run dev
+```
+
+Após isto, se tudo ocorrer bem, a aplicação estará rodando em http://localhost:3000/
+
+### 3.6. Rodando os Testes
+
+Para rodar os testes, execute o comando:
+
+```shell
+npm run test
+```
+
+Importante notar que não é possível rodar os testes ao mesmo tempo que o servidor está rodando.
 
 ## 4. Endpoints
 
