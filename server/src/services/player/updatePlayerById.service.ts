@@ -3,13 +3,13 @@ import { Player } from "../../entities/player";
 import * as i from "../../interfaces/player";
 
 const updatePlayerByIdService = async (
-	player_id: string,
+	playerId: string,
 	gold: number
 ): Promise<i.Player> => {
 	const playerRepository = AppDataSource.getRepository(Player);
 
 	const player = await playerRepository.findOneBy({
-		id: player_id,
+		id: playerId,
 	});
 
 	const playerUpdated: i.Player = await playerRepository.create({

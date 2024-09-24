@@ -19,6 +19,9 @@ import getOfferById from "./offer/getOfferById.controller";
 import updateOfferById from "./offer/updateOfferById.controller";
 import deleteOfferById from "./offer/deleteOfferById.controller";
 
+/* INVENTORY */
+import addItemToPlayer from "./inventory/addItemToPlayer.controller";
+
 export {
 	createNewPlayer,
 	getAllPlayers,
@@ -35,4 +38,5 @@ export {
 	getOfferById,
 	updateOfferById,
 	deleteOfferById,
+	addItemToPlayer,
 };

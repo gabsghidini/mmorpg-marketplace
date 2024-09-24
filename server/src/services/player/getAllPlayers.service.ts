@@ -5,7 +5,9 @@ import * as i from "../../interfaces/player";
 const getAllPlayersService = async (): Promise<i.Player[]> => {
 	const playerRepository = AppDataSource.getRepository(Player);
 
-	const players = await playerRepository.find();
+	const players = await playerRepository.find({
+		relations: ["inventory", "offers"],
+	});
 
 	return players;
 };
