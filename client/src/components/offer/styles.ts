@@ -18,7 +18,7 @@ export const ModalContent = styled.div`
 	background: white;
 	padding: 20px;
 	border-radius: 10px;
-	min-width: 300px;
+	min-width: 200px;
 `;
 
 export const InputField = styled.input`

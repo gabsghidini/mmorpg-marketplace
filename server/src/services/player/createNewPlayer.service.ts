@@ -19,6 +19,13 @@ const createNewPlayerService = async (payload: i.Player): Promise<i.Player> => {
 
 	const playerRepository = AppDataSource.getRepository(Player);
 
+	const foundPlayer = await playerRepository.findOneBy({
+		nickname: nickname,
+	});
+
+	if (foundPlayer) {
+		throw new AppError("Nickname already in use", 409);
+	}
 	const player = playerRepository.create({
 		nickname,
 		gold: 0,

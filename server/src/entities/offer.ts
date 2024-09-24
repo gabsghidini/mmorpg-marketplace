@@ -33,6 +33,6 @@ export class Offer {
 	@Column({ type: "int" })
 	totalPrice: number;
 
-	@Column({ type: "datetime" })
+	@Column({ type: "varchar" })
 	endDate: Date;
 }

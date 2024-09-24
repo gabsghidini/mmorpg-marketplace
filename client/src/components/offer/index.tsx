@@ -19,7 +19,7 @@ const OfferModal = ({ item, isOpen, onClose }: i.OfferModalProps) => {
 	const handleCreateOffer = async () => {
 		const offer: Offer = {
 			item: item,
-			pricePerUnit,
+			pricePerUnit: Math.floor(pricePerUnit),
 			quantity: amount,
 			endDate: new Date(endsAt).toISOString().split("T")[0],
 			type: offerType,

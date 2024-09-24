@@ -157,15 +157,19 @@ const Dashboard = () => {
 								<tbody>
 									{sellOffers.map((offer, index) => (
 										<tr key={index}>
-											<td>{offer.playerNickname}</td>
-											<td>{offer.quantity}</td>
-											<td>
+											<td data-head="Nickname">
+												{offer.playerNickname}
+											</td>
+											<td data-head="Amount">
+												{offer.quantity}
+											</td>
+											<td data-head="Price Per Unit">
 												{offer.pricePerUnit.toLocaleString()}
 											</td>
-											<td>
+											<td data-head="Total Price">
 												{offer.totalPrice.toLocaleString()}
 											</td>
-											<td>
+											<td data-head="Ends At">
 												{new Date(
 													offer.endDate
 												).toLocaleDateString()}
@@ -189,15 +193,19 @@ const Dashboard = () => {
 								<tbody>
 									{buyOffers.map((offer, index) => (
 										<tr key={index}>
-											<td>{offer.playerNickname}</td>
-											<td>{offer.quantity}</td>
-											<td>
+											<td data-head="Nickname">
+												{offer.playerNickname}
+											</td>
+											<td data-head="Amount">
+												{offer.quantity}
+											</td>
+											<td data-head="Price Per Unit">
 												{offer.pricePerUnit.toLocaleString()}
 											</td>
-											<td>
+											<td data-head="Total Price">
 												{offer.totalPrice.toLocaleString()}
 											</td>
-											<td>
+											<td data-head="Ends At">
 												{new Date(
 													offer.endDate
 												).toLocaleDateString()}
