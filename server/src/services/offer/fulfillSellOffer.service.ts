@@ -4,6 +4,16 @@ import { Player } from "../../entities/player";
 import { Inventory } from "../../entities/inventory";
 import { AppError } from "../../errors";
 
+/**
+ * Fulfills a sell offer by transferring the item from the seller to the buyer and handling the gold transaction.
+ *
+ * @param sellOfferId - The ID of the sell offer to be fulfilled.
+ * @param buyerId - The ID of the buyer who is purchasing the item.
+ * @returns A promise that resolves when the sell offer has been successfully fulfilled.
+ * @throws {AppError} If the sell offer is not found.
+ * @throws {AppError} If the buyer is not found.
+ * @throws {AppError} If the buyer does not have enough gold to complete the purchase.
+ */
 const fulfillSellOfferService = async (
 	sellOfferId: string,
 	buyerId: string

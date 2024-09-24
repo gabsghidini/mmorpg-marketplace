@@ -4,6 +4,16 @@ import { Offer } from "../../entities/offer";
 import { Player } from "../../entities/player";
 import { AppError } from "../../errors";
 
+/**
+ * Fulfills a buy offer by transferring items from the seller to the buyer and handling the gold transaction.
+ *
+ * @param buyOfferId - The ID of the buy offer to be fulfilled.
+ * @param sellerId - The ID of the seller who will fulfill the buy offer.
+ * @throws {AppError} If the buy offer is not found.
+ * @throws {AppError} If the seller is not found.
+ * @throws {AppError} If the seller does not have enough items in their inventory.
+ * @returns {Promise<void>} A promise that resolves when the buy offer is successfully fulfilled.
+ */
 const fulfillBuyOfferService = async (
 	buyOfferId: string,
 	sellerId: string

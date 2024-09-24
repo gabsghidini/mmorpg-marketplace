@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-console.log(process.env.PGUSER);
 const AppDataSource = new DataSource(
 	process.env.NODE_ENV === "test"
 		? {

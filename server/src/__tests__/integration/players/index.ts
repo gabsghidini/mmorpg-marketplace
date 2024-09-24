@@ -2,7 +2,7 @@ import { DataSource } from "typeorm";
 import AppDataSource from "../../../data-source";
 import request from "supertest";
 import app from "../../../app";
-import { player1, player2 } from "../../mocks";
+import { addItemToSellPlayer, offerBuy, player1, player2 } from "../../mocks";
 
 describe("/players", () => {
 	let connection: DataSource;

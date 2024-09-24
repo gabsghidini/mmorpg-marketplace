@@ -3,6 +3,13 @@ import { Player } from "../../entities/player";
 import { AppError } from "../../errors";
 import * as i from "../../interfaces/player";
 
+/**
+ * Service to create a new player.
+ *
+ * @param payload - The player data containing the nickname.
+ * @returns A promise that resolves to the created player.
+ * @throws {AppError} If the nickname is not provided.
+ */
 const createNewPlayerService = async (payload: i.Player): Promise<i.Player> => {
 	const { nickname } = payload;
 

@@ -5,6 +5,19 @@ import { Offer } from "../../entities/offer";
 import { Player } from "../../entities/player";
 import { AppError } from "../../errors";
 
+/**
+ * Creates a sell offer for a player.
+ *
+ * @param playerId - The ID of the player creating the sell offer.
+ * @param itemId - The ID of the item to be sold.
+ * @param quantity - The quantity of the item to be sold.
+ * @param pricePerUnit - The price per unit of the item.
+ * @param endDate - The end date of the sell offer.
+ * @returns A promise that resolves to the created Offer.
+ * @throws {AppError} If the player is not found.
+ * @throws {AppError} If the item is not found.
+ * @throws {AppError} If the player does not have enough items in inventory.
+ */
 const createSellOfferService = async (
 	playerId: string,
 	itemId: string,
